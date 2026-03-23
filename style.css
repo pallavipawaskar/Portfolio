@@ -36,6 +36,7 @@ body {
   font-size: 3.5rem;
   font-weight: bold;
   background: linear-gradient(90deg, #00b294, #0078d7);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -81,6 +82,12 @@ body {
 .navbar a:hover {
   color: #00b294;
 }
+/* Active link highlight */
+.navbar a.active {
+  border-bottom: 2px solid #00b294;
+  color: #00b294;
+}
+
 
 /* Sections */
 section {
@@ -113,6 +120,8 @@ section h2::after {
 }
 .skill {
   background: #1c1c1c;
+  transform: translateY(30px); /* start slightly below */
+  transition: opacity 0.6s ease, transform 0.6s ease;
   padding: 15px;
   text-align: center;
   border-radius: 8px;
@@ -123,6 +132,11 @@ section h2::after {
   transform: scale(1.1);
   background: linear-gradient(135deg, #0078d7, #00b294);
   color: #fff;
+}
+
+.skill.visible {
+  opacity: 1;
+  transform: translateY(0); /* slide into place */
 }
 
 /* Projects Grid */
@@ -272,3 +286,26 @@ footer {
   white-space: nowrap;
   overflow: hidden;
 }
+
+/* Scroll-to-Top Button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00b294;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.1);
+}
+

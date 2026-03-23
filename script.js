@@ -21,7 +21,7 @@ window.onclick = function(event) {
 
 // ===== Smooth Scrolling =====
 
-// Smooth scroll for navbar links
+// ===== Smooth Scrolling =====
 document.querySelectorAll('.navbar a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -31,6 +31,24 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
   });
 });
 
+// ===== Active Link Highlight =====
+const navLinks = document.querySelectorAll('.navbar a');
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY + 100;
+
+  navLinks.forEach(link => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
 // Smooth scroll for hero button
 const heroBtn = document.querySelector('.hero .btn');
 if (heroBtn) {
@@ -54,6 +72,7 @@ document.querySelectorAll('.skill').forEach(skill => {
     skill.style.transform = 'scale(1)';
   });
 });
+
 
 // ===== Scroll-to-Top Rocket =====
 const scrollBtn = document.querySelector('.scroll-top');
@@ -119,3 +138,19 @@ function loop() {
 }
 
 loop();
+
+// ===== Scroll-to-Top Button =====
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
