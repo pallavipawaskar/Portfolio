@@ -180,10 +180,10 @@ function showRandomQuote() {
   quote.className = "quote";
   quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
 
-  // Only bottom-left and bottom-right corners
+  // Restrict to top-left and top-right corners
   const positions = [
-    { bottom: "10px", left: "10px" },   // bottom-left
-    { bottom: "10px", right: "10px" }   // bottom-right
+    { top: "10px", left: "10px" },   // top-left
+    { top: "10px", right: "10px" }   // top-right
   ];
   const pos = positions[Math.floor(Math.random() * positions.length)];
   Object.assign(quote.style, pos);
@@ -199,4 +199,40 @@ function showRandomQuote() {
 }
 
 // Show a new quote every 8 seconds
-setInterval(showRandomQuote, 2000);
+setInterval(showRandomQuote, 8000);
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+// Scroll-to-top on click
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Make button draggable
+scrollBtn.addEventListener("mousedown", function(e) {
+  e.preventDefault();
+
+  let shiftX = e.clientX - scrollBtn.getBoundingClientRect().left;
+  let shiftY = e.clientY - scrollBtn.getBoundingClientRect().top;
+
+  function moveAt(pageX, pageY) {
+    scrollBtn.style.left = pageX - shiftX + "px";
+    scrollBtn.style.top = pageY - shiftY + "px";
+    scrollBtn.style.position = "fixed"; // ensure it stays fixed
+  }
+
+  function onMouseMove(e) {
+    moveAt(e.pageX, e.pageY);
+  }
+
+  document.addEventListener("mousemove", onMouseMove);
+
+  scrollBtn.onmouseup = function() {
+    document.removeEventListener("mousemove", onMouseMove);
+    scrollBtn.onmouseup = null;
+  };
+});
+
+scrollBtn.ondragstart = function() {
+  return false; // prevent default drag ghost
+};

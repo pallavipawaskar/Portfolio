@@ -239,34 +239,52 @@ section h2::after {
 }
 
 footer {
-  position: relative;
-  background: #0d0d0d;
-  color: #f2f2f2;
+  position: relative; /* anchor quotes inside footer */
+  background: linear-gradient(135deg, #a6cb11, #7f2304);
+  color: #0b0101;
   padding: 40px 20px;
   text-align: center;
   overflow: hidden;
+}
+
+.footer-tagline h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #461162;
+}
+
+.footer-tagline p {
+  margin: 10px 0 20px;
+  font-size: 0.95em;
+  color:linear-gradient(135deg, #060700, #fefefe);;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.85em;
+  color: #0e2e03;
 }
 
 #quote-container {
   position: absolute;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  pointer-events: none; /* quotes don’t block clicks */
 }
 
 .quote {
   position: absolute;
   font-size: 0.9em;
-  color: #ffcc00;
+  color: #1219e2;
   opacity: 0;
-  animation: fadeInOut 6s ease forwards;
+  animation: riseFromTop 6s ease forwards;
 }
 
-@keyframes fadeInOut {
-  0% { opacity: 0; transform: scale(0.8); }
-  20% { opacity: 1; transform: scale(1); }
+@keyframes riseFromTop {
+  0% { opacity: 0; transform: translateY(20px) scale(0.8); }
+  20% { opacity: 1; transform: translateY(0) scale(1); }
   80% { opacity: 1; }
-  100% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 0; transform: translateY(-20px) scale(0.8); }
 }
 /* Typing Effect */
 #typing {
@@ -279,20 +297,20 @@ footer {
 
 /* Scroll-to-Top Button */
 #scrollTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #b200b2;
-  color: #fff;
+  position: fixed; /* stays on screen */
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: grab;
+  background: #ffcc00;
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: none; /* hidden by default */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+#scrollTopBtn:active {
+  cursor: grabbing;
 }
 
 #scrollTopBtn:hover {
