@@ -253,3 +253,22 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.3);
   padding-top: 15px;
 }
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typing Effect */
+#typing {
+  font-size: 1.3rem;
+  color: #fff;
+  border-right: 2px solid #00b294;
+  white-space: nowrap;
+  overflow: hidden;
+}

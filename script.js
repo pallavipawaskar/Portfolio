@@ -68,3 +68,54 @@ console.log("%cCuriosity is the compass; persistence is the engine.",
             "color:#00b294; font-size:16px; font-weight:bold;");
 console.log("%cHello Recruiter 👋 Pallavi is a passionate explorer of tech, ambitious and stubborn in pursuit of mastery!", 
             "color:#0078d7; font-size:14px;");
+
+// ===== Scroll Animations =====
+const hiddenElements = document.querySelectorAll('.hidden');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // animate once
+    }
+  });
+}, { threshold: 0.2 });
+
+hiddenElements.forEach(el => observer.observe(el));
+
+// ===== Typing Effect (Build Once, Keep All) =====
+const phrases = [
+  "Tech Enthusiast",
+  "Passionate Analyst",
+  "Web Designer",
+  "Certified Data Engineer",
+  "AI Explorer",
+  "Cloud Learner (AWS)"
+];
+
+let i = 0; // phrase index
+let j = 0; // letter index
+let currentLine = "";
+
+function loop() {
+  const typingElement = document.getElementById('typing');
+  typingElement.innerHTML = currentLine;
+
+  if (i < phrases.length) {
+    if (j < phrases[i].length) {
+      // type letters of current phrase
+      currentLine += phrases[i][j];
+      j++;
+    } else {
+      // phrase finished, add separator and move to next
+      if (i < phrases.length - 1) {
+        currentLine += " | ";
+      }
+      i++;
+      j = 0;
+    }
+    setTimeout(loop, 120); // typing speed
+  }
+  // once all phrases are typed, stop — keep full line
+}
+
+loop();
