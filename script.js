@@ -1,21 +1,25 @@
-// Open modal
+// ===== Modal Functionality =====
+
+// Open modal by ID
 function openModal(id) {
   document.getElementById(id).style.display = 'block';
 }
 
-// Close modal
+// Close modal by ID
 function closeModal(id) {
   document.getElementById(id).style.display = 'none';
 }
 
-// Close modal when clicking outside content
+// Close modal when clicking outside modal content
 window.onclick = function(event) {
   document.querySelectorAll('.modal').forEach(modal => {
     if (event.target === modal) {
       modal.style.display = 'none';
     }
   });
-}
+};
+
+// ===== Smooth Scrolling =====
 
 // Smooth scroll for navbar links
 document.querySelectorAll('.navbar a').forEach(anchor => {
@@ -27,10 +31,40 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
   });
 });
 
-// Hero button scroll
-document.querySelector('.hero .btn').addEventListener('click', function(e) {
-  e.preventDefault();
-  document.querySelector('#contact').scrollIntoView({
-    behavior: 'smooth'
+// Smooth scroll for hero button
+const heroBtn = document.querySelector('.hero .btn');
+if (heroBtn) {
+  heroBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#contact').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+}
+
+// ===== Hover Effects =====
+
+// Add hover animation to skills
+document.querySelectorAll('.skill').forEach(skill => {
+  skill.addEventListener('mouseenter', () => {
+    skill.style.transform = 'scale(1.1)';
+    skill.style.transition = 'transform 0.3s ease';
+  });
+  skill.addEventListener('mouseleave', () => {
+    skill.style.transform = 'scale(1)';
   });
 });
+
+// ===== Scroll-to-Top Rocket =====
+const scrollBtn = document.querySelector('.scroll-top');
+if (scrollBtn) {
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ===== Fun Easter Egg: Console Message =====
+console.log("%cCuriosity is the compass; persistence is the engine.", 
+            "color:#00b294; font-size:16px; font-weight:bold;");
+console.log("%cHello Recruiter 👋 Pallavi is a passionate explorer of tech, ambitious and stubborn in pursuit of mastery!", 
+            "color:#0078d7; font-size:14px;");
