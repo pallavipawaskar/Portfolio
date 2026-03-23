@@ -10,7 +10,7 @@
   <!-- Hero Section -->
   <header class="hero">
     <h1>Pallavi Pawaskar</h1>
-    <p>Purpose-driven professional | Data & Analytics | Civic-Tech</p>
+    <p>Exploring Web Design | Data Engineering | Content Curation | Research & Analysis</p>
     <a href="#contact" class="btn">Get in Touch</a>
   </header>
 
@@ -21,6 +21,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -28,7 +29,7 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m Pallavi Pawaskar, a purpose‑driven professional with a background in Electronics & Telecommunication and hands‑on experience in data analysis, civic‑tech research, and educational content development. Skilled in Python, SQL, Excel, and AI tools, I thrive at the intersection of technology and impact.</p>
+    <p>Data Engineer with a B.Tech in Electronics & Telecommunication. Certified in Data Science & AI. Skilled in Python, SQL, HTML, CSS, JS, Excel, and Power BI, with hands‑on experience across the full data pipeline. Passionate about structuring raw data into meaningful, scalable solutions that drive performance and decision‑making.</p>
   </section>
 
   <!-- Skills Section -->
@@ -39,39 +40,64 @@
       <div class="skill">SQL</div>
       <div class="skill">Excel</div>
       <div class="skill">Power BI</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
       <div class="skill">AI Tools</div>
-      <div class="skill">HTML & CSS</div>
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Credit Risk Analysis</h3>
-      <p>Data processing & EDA using Python.</p>
-    </div>
-    <div class="project-card">
-      <h3>Superstore Sales Analysis</h3>
-      <p>SQL + Power BI dashboards for insights.</p>
-    </div>
-    <div class="project-card">
-      <h3>Movie Rating Analysis</h3>
-      <p>SQL + Excel visualization of trends.</p>
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" onclick="openModal('segmentation')">
+        <h3>Customer Segmentation</h3>
+        <p>Python | K-Means | RFM</p>
+      </div>
+      <div class="project-card" onclick="openModal('education')">
+        <h3>Education Lead Conversion</h3>
+        <p>Logistic Regression</p>
+      </div>
+      <div class="project-card" onclick="openModal('sales')">
+        <h3>Sales Dashboard</h3>
+        <p>Power BI | KPIs</p>
+      </div>
+      <div class="project-card" onclick="openModal('credit')">
+        <h3>Credit Risk Analysis</h3>
+        <p>Python | EDA</p>
+      </div>
+      <div class="project-card" onclick="openModal('superstore')">
+        <h3>Superstore Sales Analysis</h3>
+        <p>SQL | Power BI</p>
+      </div>
+      <div class="project-card" onclick="openModal('movie')">
+        <h3>Movie Rating Analysis</h3>
+        <p>SQL | Excel</p>
+      </div>
+      <div class="project-card" onclick="openModal('literacy')">
+        <h3>Literacy Data Analysis</h3>
+        <p>Python | Visualization</p>
+      </div>
     </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience">
     <h2>Experience</h2>
-    <div class="experience-item">
-      <h3>Career Facilitator | Antarang Foundation</h3>
-      <p>Delivered career readiness workshops for 300+ students.</p>
-    </div>
-    <div class="experience-item">
-      <h3>Content Developer | PsycheSimplified</h3>
-      <p>Created academic content for 1,000+ UPSC aspirants.</p>
-    </div>
+    <ul>
+      <li><strong>Content Manager Intern – The Indian Netizens (Oct 2025 – Present):</strong> Refined content and writers’ drafts. Analysed datasets to extract insights and improve reader comprehension.</li>
+      <li><strong>Data Science Intern – Snapdeal (Nov 2025 – Jan 2026):</strong> Conducted customer segmentation using K‑Means, applied elbow method & silhouette scores, delivered actionable insights for personalized campaigns.</li>
+      <li><strong>Career Facilitator – Antarang Foundation (Jul 2024 – Dec 2024):</strong> Delivered career readiness workshops for 300+ students, empowering diverse learners.</li>
+      <li><strong>Content Developer – PsycheSimplified Coaching Institute (Jun 2021 – Dec 2023):</strong> Created academic content for 1,000+ UPSC aspirants, authored exam papers, and curated model answers.</li>
+    </ul>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education & Certifications</h2>
+    <p><strong>B.Tech in Electronics & Telecommunication</strong> – DBATU, Lonere (2014–2018, GPA: 7.32)</p>
+    <p><strong>Certifications:</strong> Python Programming, AI & Prompt Engineering, HTML, Power BI</p>
   </section>
 
   <!-- Contact Section -->
@@ -79,6 +105,7 @@
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:pallavi2996@gmail.com">pallavi2996@gmail.com</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/pallavipawaskar" target="_blank">linkedin.com/in/pallavipawaskar</a></p>
+    <p>GitHub: <a href="https://github.com/pallavipawaskar" target="_blank">github.com/pallavipawaskar</a></p>
     <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
   </section>
 
@@ -87,6 +114,45 @@
     <p>© 2026 Pallavi Pawaskar | Built with ❤️</p>
   </footer>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- Modals -->
+  <div id="segmentation" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('segmentation')">&times;</span>
+      <h2>Customer Segmentation (Python, K-Means, RFM)</h2>
+      <p>Analysed 541k+ transactions and engineered RFM features; applied K‑Means clustering to segment customers into 3 groups. Identified loyal customers contributing £2.22M revenue and delivered actionable insights for targeted marketing and retention strategies.</p>
+      <a href="https://github.com/pallavipawaskar/Customer-Segmentation" target="_blank" class="btn">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <div id="education" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('education')">&times;</span>
+      <h2>Education Lead Conversion (Logistic Regression)</h2>
+      <p>Built predictive model to identify high‑potential leads, improving conversion rate from 30% → 80%. Demonstrated ability to optimize funnels and metrics.</p>
+      <a href="https://github.com/pallavipawaskar/Education-Lead-Conversion" target="_blank" class="btn">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <div id="sales" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('sales')">&times;</span>
+      <h2>Sales Dashboard & Reporting (Power BI)</h2>
+      <p>Developed interactive sales dashboards to track KPIs, visualize trends, and support data‑driven decision‑making. Automated report generation improved team efficiency.</p>
+      <a href="https://github.com/pallavipawaskar/Sales-Dashboard" target="_blank" class="btn">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <div id="credit" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('credit')">&times;</span>
+      <h2>Credit Risk Analysis (Python)</h2>
+      <p>Conducted data preprocessing and exploratory data analysis (EDA) to identify key risk factors influencing loan defaults. Applied statistical techniques to uncover borrower behavior patterns.</p>
+      <a href="https://github.com/pallavipawaskar/Credit-Risk-Analysis" target="_blank" class="btn">View GitHub Repo</a>
+    </div>
+  </div>
+
+  <div id="superstore" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('superstore')">&times;</span>
+      <h2>Superstore Sales Analysis (SQL, Power BI)</h2>
+      <p>Designed interactive dashboards to visualize KP

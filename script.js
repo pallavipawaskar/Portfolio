@@ -1,6 +1,25 @@
-// Smooth scrolling for nav links
-document.querySelectorAll('.navbar a').forEach(link => {
-  link.addEventListener('click', function(e) {
+// Open modal
+function openModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+// Close modal
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+// Close modal when clicking outside content
+window.onclick = function(event) {
+  document.querySelectorAll('.modal').forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+}
+
+// Smooth scroll for navbar links
+document.querySelectorAll('.navbar a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
@@ -8,18 +27,10 @@ document.querySelectorAll('.navbar a').forEach(link => {
   });
 });
 
-// Highlight active section in navbar
-window.addEventListener('scroll', () => {
-  let sections = document.querySelectorAll('section');
-  let scrollPos = window.scrollY + 100;
-  sections.forEach(sec => {
-    if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
-      document.querySelectorAll('.navbar a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + sec.id) {
-          link.classList.add('active');
-        }
-      });
-    }
+// Hero button scroll
+document.querySelector('.hero .btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.querySelector('#contact').scrollIntoView({
+    behavior: 'smooth'
   });
 });
