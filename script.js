@@ -166,3 +166,37 @@ items.forEach(item => {
   timelineObserver.observe(item);
 });
 
+//footer quote animation
+const quotes = [
+  "Every dataset tells a story.",
+  "Dream in code, act in impact.",
+  "Learning is my lifelong project.",
+  "Exploration fuels innovation."
+];
+
+function showRandomQuote() {
+  const container = document.getElementById("quote-container");
+  const quote = document.createElement("div");
+  quote.className = "quote";
+  quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+  // Only bottom-left and bottom-right corners
+  const positions = [
+    { bottom: "10px", left: "10px" },   // bottom-left
+    { bottom: "10px", right: "10px" }   // bottom-right
+  ];
+  const pos = positions[Math.floor(Math.random() * positions.length)];
+  Object.assign(quote.style, pos);
+
+  container.appendChild(quote);
+
+  // Remove after animation
+  setTimeout(() => {
+    if (container.contains(quote)) {
+      container.removeChild(quote);
+    }
+  }, 6000);
+}
+
+// Show a new quote every 8 seconds
+setInterval(showRandomQuote, 2000);
