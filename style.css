@@ -6,7 +6,7 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 body {
-  background: #0f0f0f;
+  background: #12000e;
   color: #f5f5f5;
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -35,7 +35,7 @@ body {
 .hero-overlay h1 {
   font-size: 3.5rem;
   font-weight: bold;
-  background: linear-gradient(90deg, #00b294, #0078d7);
+  background: linear-gradient(90deg, #d507ec, #040274);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,7 +45,7 @@ body {
   margin: 20px 0;
 }
 .hero-overlay .btn {
-  background: #00b294;
+  background: #106648;
   color: #fff;
   padding: 12px 25px;
   border-radius: 30px;
@@ -118,6 +118,7 @@ section h2::after {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 15px;
 }
+
 .skill {
   background: #1c1c1c;
   transform: translateY(30px); /* start slightly below */
@@ -125,94 +126,116 @@ section h2::after {
   padding: 15px;
   text-align: center;
   border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
   cursor: pointer;
 }
+
 .skill:hover {
   transform: scale(1.1);
   background: linear-gradient(135deg, #0078d7, #00b294);
   color: #fff;
 }
 
-.skill.visible {
-  opacity: 1;
-  transform: translateY(0); /* slide into place */
-}
-
-/* Projects Grid */
+/* Projects Grid Layout */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
-.project-card {
-  background: #1c1c1c;
+
+/* Flipcard Container */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 360px;
+  perspective: 1000px; /* enables 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  text-align: center;
 }
-.project-card img {
+
+/* Front Face */
+.flip-card-front {
+  background: #fff;
+  color: #333;
+}
+
+.flip-card-front img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-}
-.project-card figcaption {
-  padding: 15px;
-  color: #fff;
-  font-weight: bold;
-}
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
-/* Modal Styling */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(5px);
+.flip-card-front h3 {
+  font-size: 1.1em;
+  margin: 8px 0 4px;
 }
-.modal-content {
-  background: #1c1c1c;
-  color: #f5f5f5;
-  margin: 8% auto;
-  padding: 30px;
-  border-radius: 12px;
-  width: 70%;
-  animation: fadeIn 0.4s ease;
+
+.flip-card-front p {
+  font-size: 0.9em;
+  color: #666;
 }
-.modal-content h2 {
-  color: #00b294;
+
+/* Back Face */
+.flip-card-back {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  transform: rotateY(180deg);
 }
-.modal-content .btn {
-  background: #00b294;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
+
+.flip-card-back h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.flip-card-back p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.flip-card-back .btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #fff;
+  color: #2575fc;
   font-weight: bold;
-  transition: background 0.3s ease;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-.modal-content .btn:hover {
-  background: #0078d7;
-}
-.close {
-  float: right;
-  font-size: 28px;
-  cursor: pointer;
-  color: #f5f5f5;
-}
-.close:hover {
-  color: #00b294;
-}
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
+
+.flip-card-back .btn:hover {
+  background: #2575fc;
+  color: #fff;
 }
 
 /* Footer */
@@ -309,3 +332,155 @@ footer {
   transform: scale(1.1);
 }
 
+.itinerary {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-left: 3px dashed #00b294;
+  padding-left: 20px;
+}
+
+.stop {
+  position: relative;
+  padding: 15px;
+  background: #1c1c1c;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.stop.content::before {
+  content: "📝"; /* laptop for tech roles */
+}
+
+.stop.data::before {
+  content: "📊"; /* bar chart for data roles */
+}
+
+.stop.career::before {
+  content: "🌱"; /* briefcase for career roles */
+}
+
+.stop.education::before {
+  content: "🎓"; /* graduation cap for facilitation roles */
+}
+.stop::before {
+  content: "✈️";
+  position: absolute;
+  left: -35px;
+  top: 15px;
+  font-size: 1.2rem;
+  color: #00b294;
+}
+
+.stop:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #0078d7, #00b294);
+  color: #fff;
+}
+
+.stop-header h3 {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  color: #00b294;
+}
+
+.stop-date {
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+.stop-location {
+  font-style: italic;
+  color: #ccc;
+}
+.skill-tags {
+  margin-top: 10px;
+}
+.skill-tags span {
+  display: inline-block;
+  background: #0078d7;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 6px;
+}
+
+.edu-pyramid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.block {
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  background: #1c1c1c;
+  color: #f5f5f5;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.block:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #0078d7, #00b294);
+  color: #fff;
+}
+
+/* Pyramid widths */
+.block.base { width: 95%; background: #01352c; }
+.block.middle1 { width: 80%; background: #024d45; }
+.block.middle2 { width: 65%; background: #046f63; }
+.block.middle3 { width: 45%; background: #029c8d; }
+.block.top { width: 38%; background: #06b6a4;}
+
+.orbit-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 40px auto;
+  perspective: 800px; /* enables 3D effect */
+}
+
+/*contact */
+.contact-space {
+  position: relative;
+  height: 250px; /* space for icons to float */
+  overflow: hidden;
+  background: #0d0d0d;
+  border-radius: 12px;
+}
+
+.icon {
+  position: absolute;
+  bottom: -50px; /* start below */
+  font-size: 2rem;
+  text-decoration: none;
+  color: #00b294;
+  animation: rise 6s infinite ease-in-out;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Different positions & delays for variety */
+.icon:nth-child(1) { left: 15%; animation-delay: 0s; }
+.icon:nth-child(2) { left: 35%; animation-delay: 1.5s; }
+.icon:nth-child(3) { left: 55%; animation-delay: 3s; }
+.icon:nth-child(4) { left: 75%; animation-delay: 4.5s; }
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  20% { opacity: 1; }
+  50% { transform: translateY(-120px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-250px) scale(0.5); opacity: 0; }
+}
+
+/* Pause animation on hover so icon stays clickable */
+.icon:hover {
+  animation-play-state: paused;
+  transform: scale(1.3);
+  color: #0078d7;
+}

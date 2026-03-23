@@ -19,7 +19,6 @@ window.onclick = function(event) {
   });
 };
 
-// ===== Smooth Scrolling =====
 
 // ===== Smooth Scrolling =====
 document.querySelectorAll('.navbar a').forEach(anchor => {
@@ -106,9 +105,7 @@ const phrases = [
   "Tech Enthusiast",
   "Passionate Analyst",
   "Web Designer",
-  "Certified Data Engineer",
-  "AI Explorer",
-  "Cloud Learner (AWS)"
+  "Certified Data Engineer"
 ];
 
 let i = 0; // phrase index
@@ -152,5 +149,20 @@ window.addEventListener("scroll", () => {
 
 scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Experience scroll animation
+const items = document.querySelectorAll('.timeline-item');
+
+const timelineObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+items.forEach(item => {
+  timelineObserver.observe(item);
 });
 

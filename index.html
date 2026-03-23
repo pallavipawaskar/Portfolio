@@ -46,91 +46,202 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
+<section id="skills">
   <h2>Skills</h2>
-  <div class="skill">
-    <p>Python</p>
-    <div class="progress-bar"><span data-progress="90"></span></div>
-  </div>
-  <div class="skill">
-    <p>SQL</p>
-    <div class="progress-bar"><span data-progress="85"></span></div>
-  </div>
-  <div class="skill">
-    <p>Web Design</p>
-    <div class="progress-bar"><span data-progress="80"></span></div>
-  </div>
-  <div class="skill">
-    <p>AI Tools</p>
-    <div class="progress-bar"><span data-progress="75"></span></div>
+  <div class="skills-grid">
+    <div class="skill"><p>Python</p></div>
+    <div class="skill"><p>SQL</p></div>
+    <div class="skill"><p>Power BI</p></div>
+    <div class="skill"><p>Advanced Excel</p></div>
+    <div class="skill"><p>HTML</p></div>
+    <div class="skill"><p>CSS</p></div>
+    <div class="skill"><p>JavaScript</p></div>
+    <div class="skill"><p>AI Tools</p></div>
   </div>
 </section>
 
-  <!-- Projects Section -->
+<!-- Projects Section -->
 <section id="projects" class="hidden">
   <h2>Featured Projects</h2>
   <div class="projects-grid">
-    <figure class="project-card" onclick="openModal('segmentation')">
-      <img src="images/segmentation.jpg" alt="Customer Segmentation Project">
-      <figcaption>Customer Segmentation | Python, K-Means, RFM</figcaption>
-    </figure>
-    <figure class="project-card" onclick="openModal('education')">
-      <img src="images/education.jpg" alt="Education Lead Conversion Project">
-      <figcaption>Education Lead Conversion | Logistic Regression</figcaption>
-    </figure>
-    <figure class="project-card" onclick="openModal('sales')">
-      <img src="images/sales.jpg" alt="Sales Dashboard Project">
-      <figcaption>Sales Dashboard | Power BI</figcaption>
-    </figure>
-    <figure class="project-card" onclick="openModal('credit')">
-      <img src="images/credit.jpg" alt="Credit Risk Analysis Project">
-      <figcaption>Credit Risk Analysis | Python, EDA</figcaption>
-    </figure>
-    <figure class="project-card" onclick="openModal('superstore')">
-      <img src="images/superstore.jpg" alt="Superstore Sales Analysis Project">
-      <figcaption>Superstore Sales Analysis | SQL, Power BI</figcaption>
-    </figure>
-    <figure class="project-card" onclick="openModal('movie')">
-      <img src="images/movie.jpg" alt="Movie Rating Analysis Project">
-      <figcaption>Movie Rating Analysis | SQL, Excel</figcaption>
-    </figure>
-    <figure class="project-card" onclick="openModal('literacy')">
-      <img src="images/literacy.jpg" alt="Literacy Data Analysis Project">
-      <figcaption>Literacy Data Analysis | Python, Visualization</figcaption>
-    </figure>
+    
+    <!-- Flipcards -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <!-- Front -->
+        <div class="flip-card-front">
+          <img src="images/segmentation.jpg" alt="Customer Segmentation Project">
+          <h3>Customer Segmentation</h3>
+          <p>Python | K-Means | RFM</p>
+        </div>
+        <!-- Back -->
+        <div class="flip-card-back">
+          <h3>Customer Segmentation</h3>
+          <p>Analysed 541k+ transactions and engineered RFM features; applied K‑Means clustering to segment customers into 3 groups. Identified loyal customers contributing £2.22M revenue and delivered actionable insights for targeted marketing and retention strategies.</p>
+          <a href="https://github.com/pallavipawaskar/snapdeal_project" target="_blank" class="btn">View GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Lead Conversion -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/education.jpg" alt="Education Lead Conversion Project">
+          <h3>Education Lead Conversion</h3>
+          <p>Logistic Regression</p>
+        </div>
+        <div class="flip-card-back">
+          <h3>Education Lead Conversion</h3>
+          <p>Built predictive model to identify high‑potential leads, improving conversion rate from 30% → 80%. Demonstrated ability to optimize funnels and metrics.</p>
+          <a href="https://github.com/pallavipawaskar/Edu_capstone_project" target="_blank" class="btn">View GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+     <!-- Credit Risk Analysis -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/credit.jpg" alt="Credit Risk Analysis">
+          <h3>Credit Risk Analysis</h3>
+          <p>Exploratory Data Aanalysis, Python</p>
+        </div>
+        <div class="flip-card-back">
+          <h3>Credit Risk Analysis</h3>
+          <p>Conducted data preprocessing and exploratory data analysis (EDA) to identify key risk factors influencing loan defaults. Applied statistical techniques to uncover borrower behavior patterns.</p>
+          <a href="https://github.com/pallavipawaskar/Credit_Risk_Analysis" target="_blank" class="btn">View GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    
+     <!--Superstore Sales Analysis -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/superstore.jpg" alt="Superstore Sales Analysis">
+          <h3>Superstore Sales Analysis</h3>
+          <p>SQL, PowerBI</p>
+        </div>
+        <div class="flip-card-back">
+          <h3>Superstore Sales Analysis</h3>
+          <p>Developed interactive sales dashboards to track KPIs, visualize trends, and support data‑driven decision‑making. Automated report generation improved team efficiency.</p>
+          <a href="https://github.com/pallavipawaskar/Superstore_Sales_Analysis" target="_blank" class="btn">View GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+
+    <!--Movie Rating Analysis -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/movie.jpg" alt="Movie Rating Analysis">
+          <h3>Movie Rating Analysis</h3>
+          <p>SQL, Excel</p>
+        </div>
+        <div class="flip-card-back">
+          <h3>Movie Rating Analysis</h3>
+          <p>Analyzed audience rating datasets using SQL queries and Excel pivot tables to identify genre preferences and rating distributions. Delivered clear visualizations that highlighted viewer trends and supported content recommendation strategies.</p>
+          <a href="https://github.com/pallavipawaskar/Movie_Rating_Analysis" target="_blank" class="btn">View GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 
-
   <!-- Experience Section -->
-  <section id="experience" class="hidden">
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>Content Manager Intern – The Indian Netizens (Oct 2025 – Present):</strong> Refined content and writers’ drafts. Analysed datasets to extract insights and improve reader comprehension.</li>
-      <li><strong>Data Science Intern – Snapdeal (Nov 2025 – Jan 2026):</strong> Conducted customer segmentation using K‑Means, applied elbow method & silhouette scores, delivered actionable insights for personalized campaigns.</li>
-      <li><strong>Career Facilitator – Antarang Foundation (Jul 2024 – Dec 2024):</strong> Delivered career readiness workshops for 300+ students, empowering diverse learners.</li>
-      <li><strong>Content Developer – PsycheSimplified Coaching Institute (Jun 2021 – Dec 2023):</strong> Created academic content for 1,000+ UPSC aspirants, authored exam papers, and curated model answers.</li>
-    </ul>
-  </section>
+   <section id="experience" class="hidden">
+  <h2>Professional itinerary</h2>
+  <div class="itinerary">
+    <div class="stop content">
+      <div class="stop-header">
+        <span class="stop-date">Oct 2025 – Present</span>
+        <h3>Content Manager Intern</h3>
+        <p class="stop-location">The Indian Netizens</p>
+      </div>
+      <div class="stop-details">
+        <p>Refined content and writers’ drafts. Analysed datasets to extract insights and improve reader comprehension.</p>
+      </div>
+    </div>
 
-  <!-- Education Section -->
+    <div class="stop data">
+      <div class="stop-header">
+        <span class="stop-date">Nov 2025 – Jan 2026</span>
+        <h3>Data Science Intern</h3>
+        <p class="stop-location">Snapdeal</p>
+      </div>
+      <div class="stop-details">
+        <p>Conducted customer segmentation based on purchasing behaviour using K‑Means clustering.Overcame the challenge of determining the optimal number of clusters (K) by applying the elbow method and silhouette scores.Segmented customers into three groups: loyal, balanced, and budget‑conscious.Delivered actionable insights that helped refine marketing strategies and implement personalized campaigns such as loyalty points, leading to improved customer engagement and sales.</p>
+      </div>
+    </div>
+    
+    <div class="stop career">
+      <div class="stop-header">
+        <span class="stop-date">Jul 2024 – Dec 2024</span>
+        <h3>Career Facilitator(Volunatary Engagement)</h3>
+        <p class="stop-location">Antarang Foundation</p>
+      </div>
+      <div class="stop-details">
+        <p>Delivered career readiness workshops for 300+ students. Collected aptitude and interest data to plan personalized career counselling pathways.</p>
+      </div>
+    </div>
+
+    <div class="stop content">
+      <div class="stop-header">
+        <span class="stop-date">Jun 2021 – Dec 2023</span>
+        <h3>Content Developer</h3>
+        <p class="stop-location">PsycheSimplified Coaching Institute</p>
+      </div>
+      <div class="stop-details">
+        <p>Created UPSC study material and authored exam papers for 1k+ aspirants. Managed backend operations. Analysed performance data to personalize sessions and guide preparation strategies.</p>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+  
+  
+<!--Education Section -->
   <section id="education" class="hidden">
-    <h2>Education & Certifications</h2>
-    <p><strong>B.Tech in Electronics & Telecommunication</strong> – DBATU, Lonere (2014–2018, GPA: 7.32)</p>
-    <p><strong>Certifications:</strong> Python Programming, AI & Prompt Engineering, HTML, Power BI</p>
-  </section>
+  <h2>Education</h2>
+  <div class="edu-pyramid">
+    <div class="block top">
+      <pre>
+      💻 Certifications(2025-2026):
+      Mentor-led Internship:Snapdeal
+      Data Science & AI:UpGrad 
+      AI & Prompt Engineering:UpGrad 
+      HTML Certification:Knowledge Gate
+      </pre>
+    </div>
+    <div class="block middle3">
+      🏅 CSIR CASE Stage 1 Cleared (2023)
+    </div>
+    <div class="block middle2">
+      🏆 SSC CGL Tier 1 Cleared (2022)
+    </div>
+    <div class="block middle1">
+      📚 UPSC Civil Services Preparation (2019–2025)
+    </div>
+    <div class="block base">
+      🎓 B.Tech in Electronics & Telecommunication <br>
+      DBATU, Lonere (2014–2018)
+    </div>
+  </div>
+</section>
 
   <!-- Contact Section -->
   <section id="contact" class="hidden">
-    <h2>Contact Me</h2>
-    <address>
-      <p>Email: <a href="mailto:pallavi2996@gmail.com">pallavi2996@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/pallavipawaskar" target="_blank">linkedin.com/in/pallavipawaskar</a></p>
-      <p>GitHub: <a href="https://github.com/pallavipawaskar" target="_blank">github.com/pallavipawaskar</a></p>
-      <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
-    </address>
-  </section>
+  <h2>Connect with Me</h2>
+  <div class="contact-space">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pallavi2996@gmail.com" target="_blank" class="icon">📧</a>
+    <a href="https://linkedin.com/in/pallavipawaskar" target="_blank" class="icon">🌐</a>
+    <a href="https://github.com/pallavipawaskar" target="_blank" class="icon">💻</a>
+    <a href="https://drive.google.com/file/d/1tHcIewj1VJNL1pJON0wCVPIY_sqfcl7p/view?usp=sharing" target="_blank" class="icon">📄</a>
+  </div>
+</section>
 
 
   <!-- Footer -->
@@ -155,93 +266,12 @@
       </ul>
     </div>
 
-    <!-- Right: Social -->
-    <div class="footer-social">
-      <h4>Connect</h4>
-      <a href="mailto:pallavi2996@gmail.com">📧 </a>
-      <a href="https://linkedin.com/in/pallavipawaskar" target="_blank">💼 </a>
-      <a href="https://github.com/pallavipawaskar" target="_blank">💻 </a>
-    </div>
-  </div>
-
   <!-- Bottom Line -->
   <div class="footer-bottom">
     <p>© 2026 Pallavi Pawaskar | Explorer • Enthusiast • Ambitious Learner</p>
   </div>
 </footer>
 
-  <!-- Modals for Projects -->
-  <!-- Customer Segmentation -->
-<div id="segmentation" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('segmentation')">&times;</span>
-    <h2>Customer Segmentation (Python, K-Means, RFM)</h2>
-    <p>Analysed 541k+ transactions and engineered RFM features; applied K‑Means clustering to segment customers into 3 groups. Identified loyal customers contributing £2.22M revenue and delivered actionable insights for targeted marketing and retention strategies.</p><br>
-    <a href="https://github.com/pallavipawaskar/snapdeal_project" target="_blank" class="btn">
-      View GitHub Repo</a>
-  </div>
-</div>
-
-<!-- Education Lead Conversion -->
-<div id="education" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('education')">&times;</span>
-    <h2>Education Lead Conversion (Logistic Regression)</h2>
-    <p>Built predictive model to identify high‑potential leads, improving conversion rate from 30% → 80%. Demonstrated ability to optimize funnels and metrics.</p>
-    <a href="https://github.com/pallavipawaskar/Edu_capstone_project" target="_blank" class="btn">
-      View GitHub Repo</a>
-  </div>
-</div>
-
-<!-- Sales Dashboard -->
-<div id="sales" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('sales')">&times;</span>
-    <h2>Sales Dashboard & Reporting (Power BI)</h2>
-    <p>Developed interactive sales dashboards to track KPIs, visualize trends, and support data‑driven decision‑making. Automated report generation improved team efficiency.</p><br>
-    <a href="https://github.com/pallavipawaskar/Sales-Dashboard" target="_blank" class="btn">View GitHub Repo</a>
-  </div>
-</div>
-
-<!-- Credit Risk Analysis -->
-<div id="credit" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('credit')">&times;</span>
-    <h2>Credit Risk Analysis (Python)</h2>
-    <p>Conducted data preprocessing and exploratory data analysis (EDA) to identify key risk factors influencing loan defaults. Applied statistical techniques to uncover borrower behavior patterns.</p> <br>
-    <a href="https://github.com/pallavipawaskar/Credit-Risk-Analysis" target="_blank" class="btn">View GitHub Repo</a>
-  </div>
-</div>
-
-<!-- Superstore Sales Analysis -->
-<div id="superstore" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('superstore')">&times;</span>
-    <h2>Superstore Sales Analysis (SQL, Power BI)</h2>
-    <p>Designed interactive dashboards to visualize KPIs, sales trends, and regional performance. Leveraged SQL queries for data extraction and Power BI for dynamic reporting, helping stakeholders track business insights and optimize strategies.</p> <br>
-    <a href="https://github.com/pallavipawaskar/Superstore-Sales-Analysis" target="_blank" class="btn">View GitHub Repo</a>
-  </div>
-</div>
-
-<!-- Movie Rating Analysis -->
-<div id="movie" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('movie')">&times;</span>
-    <h2>Movie Rating Analysis (SQL + Excel)</h2>
-    <p>Analyzed audience rating datasets using SQL queries and Excel pivot tables to identify genre preferences and rating distributions. Delivered clear visualizations that highlighted viewer trends and supported content recommendation strategies.</p><br>
-    <a href="https://github.com/pallavipawaskar/Movie-Rating-Analysis" target="_blank" class="btn">View GitHub Repo</a>
-  </div>
-</div>
-
-<!-- Literacy Data Analysis -->
-<div id="literacy" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('literacy')">&times;</span>
-    <h2>Literacy Data Analysis (Python)</h2>
-    <p>Explored gender and regional disparities in literacy rates using Python libraries for data cleaning and visualization. Generated comparative insights that highlighted socio‑economic gaps, supporting policy analysis and educational planning.</p><br>
-    <a href="https://github.com/pallavipawaskar/Literacy-Data-Analysis" target="_blank" class="btn">View GitHub Repo</a>
-  </div>
-</div>
 
   <script src="script.js"></script>
   <button id="scrollTopBtn">↑</button>
