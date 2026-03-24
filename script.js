@@ -1,3 +1,5 @@
+console.log("script.js loaded!");
+
 // ===== Modal Functionality =====
 
 // Open modal by ID
@@ -73,14 +75,6 @@ document.querySelectorAll('.skill').forEach(skill => {
 });
 
 
-// ===== Scroll-to-Top Rocket =====
-const scrollBtn = document.querySelector('.scroll-top');
-if (scrollBtn) {
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
 // ===== Fun Easter Egg: Console Message =====
 console.log("%cCuriosity is the compass; persistence is the engine.", 
             "color:#00b294; font-size:16px; font-weight:bold;");
@@ -99,6 +93,29 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 hiddenElements.forEach(el => observer.observe(el));
+
+// Scroll to top functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  if (!scrollBtn) return;
+
+  // Show/hide button
+  window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+  });
+
+  // Launch animation + scroll
+  scrollBtn.addEventListener("click", () => {
+    console.log("Rocket launched!");
+    scrollBtn.classList.add("launch");
+
+    // After animation, scroll to top and reset rocket
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollBtn.classList.remove("launch");
+    }, 600); // matches CSS transition duration
+  });
+});
 
 // ===== Typing Effect (Build Once, Keep All) =====
 const phrases = [
@@ -131,32 +148,11 @@ function loop() {
     }
     setTimeout(loop, 120); // typing speed
   }
-  // once all phrases are typed, stop — keep full line
 }
 
 loop();
 
-// ===== Scroll-to-Top Button =====
-const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollTopBtn.style.display = "block";
-  } else {
-    scrollTopBtn.style.display = "none";
-  }
-});
-
-// Experience scroll animation
-const items = document.querySelectorAll('.timeline-item');
-
-const timelineObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-});
 
 items.forEach(item => {
   timelineObserver.observe(item);
@@ -197,36 +193,3 @@ function showRandomQuote() {
 // Show a new quote every 8 seconds
 setInterval(showRandomQuote, 8000);
 
-// Scroll-to-top on click
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// Make button draggable
-scrollBtn.addEventListener("mousedown", function(e) {
-  e.preventDefault();
-
-  let shiftX = e.clientX - scrollBtn.getBoundingClientRect().left;
-  let shiftY = e.clientY - scrollBtn.getBoundingClientRect().top;
-
-  function moveAt(pageX, pageY) {
-    scrollBtn.style.left = pageX - shiftX + "px";
-    scrollBtn.style.top = pageY - shiftY + "px";
-    scrollBtn.style.position = "fixed"; // ensure it stays fixed
-  }
-
-  function onMouseMove(e) {
-    moveAt(e.pageX, e.pageY);
-  }
-
-  document.addEventListener("mousemove", onMouseMove);
-
-  scrollBtn.onmouseup = function() {
-    document.removeEventListener("mousemove", onMouseMove);
-    scrollBtn.onmouseup = null;
-  };
-});
-
-scrollBtn.ondragstart = function() {
-  return false; // prevent default drag ghost
-};
