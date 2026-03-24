@@ -14,28 +14,52 @@ body {
 
 /* Hero Section */
 .hero {
-  position: relative;
   height: 100vh;
+  width: 100%;
+  background-image: url("Images/hero b.png");
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  background-repeat: repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
   overflow: hidden;
 }
-#heroVideo {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  z-index: -1;
+
+@media (max-width: 700px) {
+  .hero {
+    background-position: top center;
+    padding: 40px 20px;
+    height: 100vh;
+  }
+
+  .hero-overlay {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #typing {
+    font-size: 1rem;
+  }
 }
 .hero-overlay {
   position: relative;
-  text-align: center;
-  top: 40%;
-  transform: translateY(-40%);
-  color: #fff;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0); 
+  padding: 20px;
+  border-radius: 8px;
 }
 .hero-overlay h1 {
   font-size: 3.5rem;
   font-weight: bold;
-  background: linear-gradient(90deg, #d507ec, #040274);
+  background: linear-gradient(90deg, #5b0a91, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,7 +69,7 @@ body {
   margin: 20px 0;
 }
 .hero-overlay .btn {
-  background: #106648;
+  background: linear-gradient(90deg, #5a0f9c, #75557e);
   color: #fff;
   padding: 12px 25px;
   border-radius: 30px;
@@ -54,13 +78,14 @@ body {
   transition: all 0.3s ease;
 }
 .hero-overlay .btn:hover {
-  background: #2bed6f;
+  background: linear-gradient(90deg, #939c0f, #c55d08);
   transform: scale(1.1);
 }
 
+
 /* Navbar */
 .navbar {
-  background: rgba(25, 1, 29, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   padding: 15px;
   text-align: center;
   position: sticky;
