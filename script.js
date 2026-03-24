@@ -147,10 +147,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-scrollTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
 // Experience scroll animation
 const items = document.querySelectorAll('.timeline-item');
 
@@ -200,8 +196,6 @@ function showRandomQuote() {
 
 // Show a new quote every 8 seconds
 setInterval(showRandomQuote, 8000);
-
-const scrollBtn = document.getElementById("scrollTopBtn");
 
 // Scroll-to-top on click
 scrollBtn.addEventListener("click", () => {
