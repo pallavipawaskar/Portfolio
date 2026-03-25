@@ -218,6 +218,7 @@ section h2::after {
   object-fit: cover;
   border-radius: 12px;
   display: block;
+  filter: blur(4px); 
 }
 
 .flip-card-front h3,
